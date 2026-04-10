@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Greeting</title>
+</head>
+<body>
+
+<h2>Greetings</h2>
+
+<ul>
+    <li th:each="row,iter : ${table}" th:text="${row}" class="rw">
+		[[${row}]]    
+    </li>
+</ul>
+<script>
+	document.querySelectorAll('.rw').forEach(item=>{
+		const hue = Math.floor(Math.random()*360);
+		item.style.color=`hsl(${hue},70%,50%)`;
+	});
+
+</script>
+<a href="/">Back</a>
+
+</body>
+</html>
